@@ -16,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 // middleware('auth:sanctum')
 // 直下のルーティングが全て認証済み出ないと実施されない
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:samctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 });
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::post('/login', 'UserController@login');
 Route::post('/register', 'UserController@register');
