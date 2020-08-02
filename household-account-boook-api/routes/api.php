@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+// middleware('auth:sanctum')
+// 直下のルーティングが全て認証済み出ないと実施されない
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/login', 'UserController@login');
+Route::post('/register', 'UserController@register');
+Route::post('/logout', 'UserController@logout');

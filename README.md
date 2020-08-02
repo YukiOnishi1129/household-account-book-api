@@ -8,13 +8,21 @@
 
 php artisan migrate
 
-### マイグレーション 直前をロールバック
+#### マイグレーション 直前をロールバック
 
 php artisan migrate:rollback
 
-### マイグレーション 全てをロールバック
+#### マイグレーション 全てをロールバック
 
 php artisan migrate:reset
+
+### ルートの確認
+
+php artisan route:list
+
+### コントローラー作成 (REST)
+
+php artisan make:controller 「コントローラー名」 --resource
 
 ## docker コマンド
 
