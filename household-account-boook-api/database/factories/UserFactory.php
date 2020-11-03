@@ -17,13 +17,13 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
-    static $password;
+// $factory->define(User::class, function (Faker $faker) {
+//     static $password;
 
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'user_type' => 1
-    ];
-});
+//     return [
+//         'name' => $faker->name,
+//         'email' => $faker->unique()->safeEmail,
+//         'password' => $password ?: $password = bcrypt('secret'),
+//         'user_type' => 1
+//     ];
+// });
