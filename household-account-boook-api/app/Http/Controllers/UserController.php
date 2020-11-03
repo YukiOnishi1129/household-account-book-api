@@ -104,9 +104,9 @@ class UserController extends Controller
      */
     public function logout()
     {
-        // Log::info('ログアウト');
+        Log::info('ログアウト');
         Auth::logout();
-        return response()->json(['message' => 'Logged Out'], 200);
+        return response()->json(['message' => 'Logged Out'], 204);
     }
 
 
@@ -116,12 +116,9 @@ class UserController extends Controller
      */
     public function auth()
     {
-        Log::info('サンクタム');
         if (!Auth::check()) {
-            Log::info('認証エラー');
             return response()->json(['message' => 'invalid email or password'], 401);
         } else {
-            Log::info('認証OK!');
             $authuser = auth()->user();
             unset($authuser['created_at']);
             unset($authuser['updated_at']);

@@ -16,6 +16,6 @@ class CalendarController extends Controller
 
         Log::info('===============');
         Log::info($date);
-        return response()->json(['message' => 'invalid email or password'], 200);
+        return response()->json(["date" => ''], 200);
     }
 }
