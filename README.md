@@ -4,7 +4,6 @@
 
 <img width="708" alt="スクリーンショット 2020-08-30 2 53 04" src="https://user-images.githubusercontent.com/58220747/91643226-47314400-ea6c-11ea-87d0-3e0ca5c8177d.png">
 
-
 ## Laravel コマンド
 
 ### マイグレーション
@@ -18,6 +17,19 @@ php artisan migrate:rollback
 #### マイグレーション 全てをロールバック
 
 php artisan migrate:reset
+
+#### マイグレーション テーブル全てをドロップしマイグレーションを際実行する
+
+php artisan migrate:fresh
+
+#### seeder 実行
+
+php artisan db:seed
+php artisan db:seed --class=シーダーファイル名
+
+#### テーブルを再構築してシーダーを実行
+
+php artisan migrate:fresh --seed
 
 ### ルートの確認
 

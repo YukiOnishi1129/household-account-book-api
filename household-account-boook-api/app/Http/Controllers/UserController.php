@@ -88,7 +88,10 @@ class UserController extends Controller
         if (Auth::attempt($credential)) {
             // ログイン成功
             $authuser = auth()->user();
-            return response()->json(['message' => 'Login successful'], 200);
+            unset($authuser['created_at']);
+            unset($authuser['updated_at']);
+            unset($authuser['delete_flg']);
+            return response()->json($authuser, 200);
         } else {
             return response()->json(['message' => 'invalid email or password'], 401);
         }
@@ -103,7 +106,25 @@ class UserController extends Controller
     {
         // Log::info('ログアウト');
         Auth::logout();
-        return response()->json(['message' => 'Logged Out'], 200);
+        return response()->json(['message' => 'Logged Out'], 204);
+    }
+
+
+    /**
+     * 認証ルーティング
+     * @return json
+     */
+    public function auth()
+    {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'invalid email or password'], 401);
+        } else {
+            $authuser = auth()->user();
+            unset($authuser['created_at']);
+            unset($authuser['updated_at']);
+            unset($authuser['delete_flg']);
+            return response()->json($authuser, 200);
+        }
     }
 
     /**
