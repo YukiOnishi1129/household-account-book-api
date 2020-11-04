@@ -21,7 +21,6 @@ class CreateMonthCategoryAmountsTable extends Migration
             $table->dateTime('date')->comment('対象月');
             $table->foreignId('user_id')->comment('ユーザーID')->constrained();
             $table->timestamps();
-            $table->unique(['category_id', 'user_id']);
         });
     }
 

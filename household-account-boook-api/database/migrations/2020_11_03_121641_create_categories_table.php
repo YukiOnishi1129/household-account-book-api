@@ -19,7 +19,6 @@ class CreateCategoriesTable extends Migration
             $table->unsignedTinyInteger('color_type')->comment('カラータイプ');
             $table->foreignId('user_id')->comment('ユーザーID')->constrained();
             $table->timestamps();
-            $table->unique('user_id');
         });
     }
 

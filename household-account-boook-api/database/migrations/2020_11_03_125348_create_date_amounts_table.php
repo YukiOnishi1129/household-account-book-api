@@ -19,7 +19,6 @@ class CreateDateAmountsTable extends Migration
             $table->dateTime('date')->comment('金額日付');
             $table->foreignId('user_id')->comment('ユーザーID')->constrained();
             $table->timestamps();
-            $table->unique('user_id');
         });
     }
 
