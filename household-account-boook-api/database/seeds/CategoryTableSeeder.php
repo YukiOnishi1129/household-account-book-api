@@ -12,7 +12,6 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-
         $categoryNames = array(
             '0' => '食費',
             '1' => '交際費',
